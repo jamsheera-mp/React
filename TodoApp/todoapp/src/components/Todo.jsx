@@ -17,6 +17,16 @@ const Todo = () => {
     if (inputText === "") {
       return null;
     }
+    // Check if task already exists (case insensitive)
+  const isDuplicate = todoList.some(todo => 
+    todo.text.toLowerCase() === inputText.toLowerCase()
+  );
+  if (isDuplicate) {
+    // Alert user or provide feedback that task already exists
+    alert("This task already exists in your list!");
+    return;
+  }
+
     const newTodo = {
       id: Date.now(),
       text: inputText,

@@ -1,19 +1,21 @@
 
+import React, { useState } from 'react';
 
-import React from 'react'
-import FocusInput from './components/FocusInput'
+import MyButtonSample from './components/MyButtonSample';
 
-
-
-const App = () => {
+function App() {
+  const [count,setCount] = useState(0)
+       function handleClick(){
+          setCount(count+1)
+      }
   return (
     <div>
-
-   <h1>My React App</h1>
-  <FocusInput />
-
+<MyButtonSample count={count} onClick={handleClick}/>
+<MyButtonSample count={count} onClick={handleClick} />
     </div>
-  )
+  
+ 
+  );
 }
 
-export default App
+export default App;

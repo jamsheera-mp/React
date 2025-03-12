@@ -1,14 +1,15 @@
-
-
-import React ,{Component} from 'react'
+import { Component } from "react";
 
 
 class Welcome extends Component{
     render(){
+        const {name} = this.props
         return (
-            <h1>Class Component</h1>
+            <div>
+               <h1>Welcome {name}</h1> 
+            </div>
         )
     }
 }
 
-export default Welcome
+export default Welcome;
